@@ -38,7 +38,6 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, l
 })
 let projectile: Sprite = null
 let Character: Sprite = null
-let level = 0
 Character = sprites.create(img`
     ........................................
     ........................................
@@ -81,6 +80,7 @@ Character = sprites.create(img`
     ........................................
     ........................................
     `, SpriteKind.Player)
+tiles.placeOnRandomTile(Character, assets.tile`myTile0`)
 scene.setBackgroundColor(6)
 tiles.setCurrentTilemap(tilemap`level1`)
 Character.ay = 450
