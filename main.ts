@@ -75,8 +75,9 @@ Character = sprites.create(img`
     `, SpriteKind.Player)
 scene.setBackgroundColor(6)
 tiles.setCurrentTilemap(tilemap`level1`)
+Character.ay = 450
 scene.cameraFollowSprite(Character)
 Character.setStayInScreen(true)
 controller.moveSprite(Character, 100, 0)
+info.startCountdown(25)
 music.playMelody("D G D B C E F D ", 120)
-Character.ay = 450
