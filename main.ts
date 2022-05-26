@@ -50,3 +50,4 @@ scene.cameraFollowSprite(Character)
 Character.setStayInScreen(true)
 controller.moveSprite(Character)
 music.playMelody("D G D B C E F D ", 120)
+Character.ay = 500
