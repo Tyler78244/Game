@@ -1,4 +1,8 @@
-let Character = sprites.create(img`
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    Character.vy = -200
+})
+let Character: Sprite = null
+Character = sprites.create(img`
     ........................................
     ........................................
     ........................................
@@ -44,5 +48,6 @@ scene.setBackgroundColor(6)
 tiles.setCurrentTilemap(tilemap`level1`)
 scene.cameraFollowSprite(Character)
 Character.setStayInScreen(true)
-controller.moveSprite(Character)
+controller.moveSprite(Character, 100, 0)
 music.playMelody("D G D B C E F D ", 120)
+Character.ay = 500
