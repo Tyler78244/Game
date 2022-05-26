@@ -48,6 +48,5 @@ scene.setBackgroundColor(6)
 tiles.setCurrentTilemap(tilemap`level1`)
 scene.cameraFollowSprite(Character)
 Character.setStayInScreen(true)
-controller.moveSprite(Character, 100, 0)
+controller.moveSprite(Character)
 music.playMelody("D G D B C E F D ", 120)
-Character.ay = 500
