@@ -29,13 +29,13 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     Character.vy = -400
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, location) {
+    Level_2()
+})
 function Level_2 () {
     info.stopCountdown()
     info.setLife(3)
 }
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, location) {
-    Level_2()
-})
 let projectile: Sprite = null
 let Character: Sprite = null
 Character = sprites.create(img`
@@ -80,12 +80,12 @@ Character = sprites.create(img`
     ........................................
     ........................................
     `, SpriteKind.Player)
-tiles.placeOnRandomTile(Character, assets.tile`myTile0`)
 scene.setBackgroundColor(6)
 tiles.setCurrentTilemap(tilemap`level1`)
 Character.ay = 450
 scene.cameraFollowSprite(Character)
 Character.setStayInScreen(true)
 controller.moveSprite(Character, 100, 0)
+tiles.placeOnRandomTile(Character, assets.tile`myTile0`)
 info.startCountdown(25)
 music.playMelody("D G D B C E F D ", 120)
