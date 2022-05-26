@@ -1,7 +1,4 @@
-let Character: Sprite = null
-tiles.setCurrentTilemap(tilemap`level1`)
-scene.cameraFollowSprite(Character)
-Character = sprites.create(img`
+let Character = sprites.create(img`
     ........................................
     ........................................
     ........................................
@@ -43,4 +40,8 @@ Character = sprites.create(img`
     ........................................
     ........................................
     `, SpriteKind.Player)
+scene.setBackgroundColor(6)
+tiles.setCurrentTilemap(tilemap`level1`)
+scene.cameraFollowSprite(Character)
+Character.setStayInScreen(true)
 controller.moveSprite(Character)
