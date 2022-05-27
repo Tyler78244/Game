@@ -1,3 +1,6 @@
+namespace SpriteKind {
+    export const npc = SpriteKind.create()
+}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
 })
@@ -61,6 +64,7 @@ function Level_2 () {
 function Level_3 () {
 	
 }
+let qpqp: Sprite = null
 let mySprite: Sprite = null
 let Character: Sprite = null
 game.splash("Climb to the top to beat level 1")
@@ -116,6 +120,28 @@ Character.setStayInScreen(true)
 controller.moveSprite(Character, 100, 0)
 tiles.placeOnRandomTile(Character, assets.tile`myTile0`)
 info.startCountdown(35)
+forever(function () {
+    qpqp = sprites.create(img`
+        . . . . . . . . 1 1 . . . . . . 
+        . . . . . . 1 1 1 1 1 . . . . . 
+        . . . . 1 1 1 1 1 1 1 1 . . . . 
+        1 1 1 1 1 1 1 1 1 1 1 1 1 . . . 
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 . . 
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 . . 
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 . . 
+        . . 1 1 1 1 1 1 1 1 1 1 1 1 . . 
+        . . . . . . 1 1 1 1 1 1 . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.npc)
+    qpqp.setPosition(randint(15, 155), randint(15, 155))
+    pause(5000)
+})
 forever(function () {
     if (controller.A.isPressed()) {
         info.changeScoreBy(1)
