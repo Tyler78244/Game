@@ -1,21 +1,21 @@
 namespace SpriteKind {
     export const npc = SpriteKind.create()
 }
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    info.changeLifeBy(-1)
-})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile4`, function (sprite, location) {
     Level_3()
 })
-info.onLifeZero(function () {
+info.onCountdownEnd(function () {
     game.over(false)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, location) {
     Level_2()
 })
-info.onCountdownEnd(function () {
+info.onLifeZero(function () {
     game.over(false)
 })
+function Level_3 () {
+	
+}
 function Level_2 () {
     info.stopCountdown()
     info.setLife(450)
@@ -61,9 +61,9 @@ function Level_2 () {
         mySprite.follow(Character)
     }
 }
-function Level_3 () {
-	
-}
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+})
 let qpqp: Sprite = null
 let mySprite: Sprite = null
 let Character: Sprite = null
