@@ -14,7 +14,7 @@ info.onLifeZero(function () {
     game.over(false)
 })
 function Level_3 () {
-	
+    tiles.setCurrentTilemap(tilemap`level9`)
 }
 function Level_2 () {
     info.stopCountdown()
@@ -64,8 +64,8 @@ function Level_2 () {
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
 })
-let qpqp: Sprite = null
 let mySprite: Sprite = null
+let qpqp: Sprite = null
 let Character: Sprite = null
 game.splash("Climb to the top to beat level 1")
 game.splash("use button a to jump")
@@ -114,13 +114,8 @@ Character = sprites.create(img`
     `, SpriteKind.Player)
 scene.setBackgroundColor(6)
 tiles.setCurrentTilemap(tilemap`level1`)
-scene.cameraFollowSprite(Character)
-Character.ay = 450
-Character.setStayInScreen(true)
-controller.moveSprite(Character, 100, 0)
 tiles.placeOnRandomTile(Character, assets.tile`myTile0`)
-info.startCountdown(35)
-forever(function () {
+for (let index = 0; index < 50; index++) {
     qpqp = sprites.create(img`
         . . . . . . . . 1 1 . . . . . . 
         . . . . . . 1 1 1 1 1 . . . . . 
@@ -139,9 +134,13 @@ forever(function () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `, SpriteKind.npc)
-    qpqp.setPosition(randint(15, 155), randint(15, 155))
-    pause(5000)
-})
+    qpqp.setPosition(randint(0, 250), randint(0, 2000))
+}
+scene.cameraFollowSprite(Character)
+Character.ay = 450
+Character.setStayInScreen(true)
+controller.moveSprite(Character, 100, 0)
+info.startCountdown(35)
 forever(function () {
     if (controller.A.isPressed()) {
         info.changeScoreBy(1)
