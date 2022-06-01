@@ -1,6 +1,9 @@
 namespace SpriteKind {
     export const npc = SpriteKind.create()
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.npc, function (sprite, otherSprite) {
+    info.changeLifeBy(-20)
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile4`, function (sprite, location) {
     if (Level == 2) {
         Level += 1
