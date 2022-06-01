@@ -24,7 +24,7 @@ info.onLifeZero(function () {
 })
 function Level_3 () {
     tiles.setCurrentTilemap(tilemap`level9`)
-    tiles.placeOnRandomTile(Character, assets.tile`myTile7`)
+    tiles.placeOnRandomTile(Character, img`myTile7`)
     sprites.destroyAllSpritesOfKind(SpriteKind.Enemy)
     sprites.destroyAllSpritesOfKind(SpriteKind.npc)
     Vroom_Vroom = sprites.create(img`
@@ -45,8 +45,8 @@ function Level_3 () {
         . . . . f 2 d 2 2 2 2 d 2 f . . 
         . . . . . e 2 2 2 2 2 2 e . . . 
         `, SpriteKind.Player)
-    tiles.placeOnRandomTile(Vroom_Vroom, assets.tile`myTile6`)
-    Vroom_Vroom.setVelocity(100, 100)
+    tiles.placeOnRandomTile(Vroom_Vroom, img`myTile6`)
+    Vroom_Vroom.setVelocity(0, 100)
 }
 function Level_2 () {
     info.stopCountdown()
