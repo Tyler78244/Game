@@ -14,7 +14,7 @@ info.onLifeZero(function () {
     game.over(false)
 })
 function Level_3 () {
-    tiles.setCurrentTilemap(tilemap`level9`)
+	
 }
 function Level_2 () {
     info.stopCountdown()
